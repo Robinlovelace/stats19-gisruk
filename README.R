@@ -26,7 +26,7 @@ setNames(purrr::map_lgl(pkgs, require, character.only = TRUE), pkgs)
 
 ## ---- echo=FALSE---------------------------------------------------------
 # saveRDS(a_sample, "documents/gisruk/a_sample.Rds")
-# download.file("https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_sample.Rds", "a_sample.Rds")
+download.file("https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_sample.Rds", "a_sample.Rds")
 a_sample = readRDS("a_sample.Rds")
 
 ## ----uk-plot1, cache=TRUE, fig.cap="Columns of 'a_sample' variable plotted separately on a UK map.", warning=FALSE, fig.height=4----
@@ -62,6 +62,9 @@ plot(a_sample)
 ##   inner_join(c_ped)
 
 ## ---- echo=FALSE---------------------------------------------------------
+u = "https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_cpj.Rds"
+f = "a_cpj.Rds"
+if(!file.exists(f)) download.file(url = u, destfile = f)
 # file.copy("documets/gisruk/a_cpj.Rds", "a_cpj.Rds")
 # piggyback::pb_upload("a_cpj.Rds")
 # piggyback::pb_download("a_cpj.Rds")
