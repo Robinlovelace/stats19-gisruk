@@ -46,7 +46,7 @@ and citizens themselves should benefit, from better road safety policies and the
 
 These considerations, and the more mundane observation that dozens of researchers were duplicating effort by cleaning STATS19 data --- the official source of road crash data in Great Britain [@STATS19Data] --- instead of pooling resources to allow the focus to shift onto the research, lead to the development of software written in the statistical programming language R [@rcore]: **stats19**, an R package that was released on the Comprehensive R Archive Network (CRAN) in January 2019 [@lovelace_stats19_2019].
 
-Much road safety research has been done using Geographic Information Systems (GIS) software [e.g. @kim_using_1996, @peled_pc-oriented_1993, @steenberghen_intra-urban_2004, and @razzak_application_2011] and, with the growth of open source GIS products such as QGIS, this is a trend that can encourage open science, as defined above.
+Much road safety research has been done using Geographic Information Systems (GIS) software [e.g. @kim_using_1996; @peled_pc-oriented_1993; @steenberghen_intra-urban_2004;@razzak_application_2011] and, with the growth of open source GIS products such as QGIS, this is a trend that can encourage open science, as defined above.
 A limitation of dedicated GIS software products from a reproducibility perspective, however, is that they tend to be based on a graphic user interface (GUI), rather than a command-line interface (CLI).
 This has led to many efforts to push geographic research in a more computational directions, under labels such as Geographic Information Science (GIScience), Geographic Data Science, and Geocomputation [@lovelace_geocomputation_2019].
 

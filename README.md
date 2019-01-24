@@ -73,17 +73,17 @@ an R package that was released on the Comprehensive R Archive Network
 (CRAN) in January 2019 (R Lovelace et al. 2019).
 
 Much road safety research has been done using Geographic Information
-Systems (GIS) software (e.g. Kim and Levine 1996,
-@peled\_pc-oriented\_1993, @steenberghen\_intra-urban\_2004, and
-@razzak\_application\_2011) and, with the growth of open source GIS
-products such as QGIS, this is a trend that can encourage open science,
-as defined above. A limitation of dedicated GIS software products from a
-reproducibility perspective, however, is that they tend to be based on a
-graphic user interface (GUI), rather than a command-line interface
-(CLI). This has led to many efforts to push geographic research in a
-more computational directions, under labels such as Geographic
-Information Science (GIScience), Geographic Data Science, and
-Geocomputation (Robin Lovelace, Nowosad, and Meunchow 2019).
+Systems (GIS) software (e.g. Kim and Levine 1996; Peled and Hakkert
+1993; Steenberghen et al. 2004; Razzak, Khan, and Jalal 2011) and, with
+the growth of open source GIS products such as QGIS, this is a trend
+that can encourage open science, as defined above. A limitation of
+dedicated GIS software products from a reproducibility perspective,
+however, is that they tend to be based on a graphic user interface
+(GUI), rather than a command-line interface (CLI). This has led to many
+efforts to push geographic research in a more computational directions,
+under labels such as Geographic Information Science (GIScience),
+Geographic Data Science, and Geocomputation (Robin Lovelace, Nowosad,
+and Meunchow 2019).
 
 On a practical level, the approach demonstrated in this paper is
 conducive reproducible research because it uses code to define the
