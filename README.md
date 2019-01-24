@@ -134,7 +134,8 @@ The resulting datasets is large, consisting of more than half a million
 easy to work with in-memory on modern computers, however, consuming 1/3
 GB of RAM. These can be converted into a spatial class, defined by the
 **sf** package (Pebesma 2018). A sample of 1000 is taken and plotted,
-for demonstration purposes, as follows (see the resulting Figure 1):
+for demonstration purposes, as follows (see the resulting Figure
+1):\[1\]
 
 ``` r
 a_sf = format_sf(a)
@@ -323,9 +324,9 @@ further research should seek to identify suitable denominators of risk
 (e.g. walking rates), we can draw some conclusions. The absolute and
 proportional increase in serious casualties in London is concerning,
 especially given the government’s commitment to contribute to the
-European Union’s target of halving road traffic deaths by 2050.\[1\] The
+European Union’s target of halving road traffic deaths by 2050.\[2\] The
 results reflect the overall findings that crash rates, and deaths in
-particular, have increased in recent years.\[2\] But beyond high-level
+particular, have increased in recent years.\[3\] But beyond high-level
 aggregate analysis, the paper shows how road crash data can be
 disaggregated in many ways, including by casualty type (e.g. age,
 gender), time and location. Although many interesting results have been
@@ -487,7 +488,11 @@ Definitive Guide*. 1 edition. Boca Raton: Chapman and Hall/CRC.
 
 </div>
 
-1.  
+1.   Note: to save re-running the previous code chunks, the sample
+    dataset can be downloaded from
+    <https://github.com/Robinlovelace/stats19-gisruk/releases>
+
+2.  
     <https://fleetworld.co.uk/uk-falling-behind-on-road-safety-targets/>
 
-2.   <http://www.brake.org.uk/facts-resources/1653-uk-road-casualties>
+3.   <http://www.brake.org.uk/facts-resources/1653-uk-road-casualties>
