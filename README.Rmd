@@ -90,6 +90,11 @@ a = map_dfr(y, get_stats19, type = "accidents", ask = FALSE)
 saveRDS(a, "documents/gisruk/a.Rds")
 ```
 
+```{r, echo=FALSE}
+# saveRDS(a_sample, "documents/gisruk/a_sample.Rds")
+download.file("https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_sample.Rds", 
+"a_sample.Rds")
+```
 
 The resulting datasets is large, consisting of more than half a million
 <!-- (`r # format(nrow(a), big.mark = ",")`) -->
@@ -109,13 +114,8 @@ a_sf = format_sf(a)
 a_sample = a_sf %>% sample_n(1000)
 ```
 
-```{r, echo=FALSE}
-# saveRDS(a_sample, "documents/gisruk/a_sample.Rds")
-download.file("https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_sample.Rds", "a_sample.Rds")
-a_sample = readRDS("a_sample.Rds")
-```
-
 ```{r uk-plot1, cache=TRUE, fig.cap="Columns of 'a_sample' variable plotted separately on a UK map.", warning=FALSE, fig.height=4}
+a_sample = readRDS("a_sample.Rds")
 plot(a_sample)
 ```
 
@@ -205,7 +205,7 @@ p2 = g + geom_bar(aes(accident_severity, fill = impact)) +
 
 
 ```{r, fig.cap="Crash severity by speed limit (top) and crash severity by age band of casualty (bottom)", fig.height=6, echo=FALSE}
-# devtools::install_github("thomasp85/patchwork")
+devtools::install_github("thomasp85/patchwork")
 library(patchwork)
 p1 + p2 + plot_layout(ncol = 1, heights = c(4, 5))
 ```
