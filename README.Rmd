@@ -100,7 +100,9 @@ rows (crash points), with
 columns [see @lovelace_stats19_2019 for details on the data].
 This is easy to work with in-memory on modern computers, however, consuming 1/3 GB of RAM.
 These can be converted into a spatial class, defined by the **sf** package [@pebesma_simple_2018-1].
-A sample of 1000 is taken and plotted, for demonstration purposes, as follows (see the resulting Figure 1):
+A sample of 1000 is taken and plotted, for demonstration purposes, as follows (see the resulting Figure 1):^[
+Note: to save re-running the previous code chunks, the sample dataset can be downloaded from https://github.com/Robinlovelace/stats19-gisruk/releases
+]
 
 ```{r, eval=FALSE}
 a_sf = format_sf(a)
@@ -109,7 +111,7 @@ a_sample = a_sf %>% sample_n(1000)
 
 ```{r, echo=FALSE}
 # saveRDS(a_sample, "documents/gisruk/a_sample.Rds")
-# download.file("https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_sample.Rds", "a_sample.Rds")
+download.file("https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_sample.Rds", "a_sample.Rds")
 a_sample = readRDS("a_sample.Rds")
 ```
 
@@ -162,6 +164,9 @@ a_cpj = a_cp %>%
 ```
 
 ```{r, echo=FALSE}
+u = "https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_cpj.Rds"
+f = "a_cpj.Rds"
+if(!file.exists(f)) download.file(url = u, destfile = f)
 # file.copy("documets/gisruk/a_cpj.Rds", "a_cpj.Rds")
 # piggyback::pb_upload("a_cpj.Rds")
 # piggyback::pb_download("a_cpj.Rds")
