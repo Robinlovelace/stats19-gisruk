@@ -393,4 +393,9 @@ From a GIS perspective, the data presented in this paper are undoubtedly of grea
 This raises further questions about interactive data visualisation, for example using the `geoplumber` package, which builds on `plumber` [@plumber], and the possibility for web applications building on sites such as [www.crashmap.co.uk](https://www.crashmap.co.uk/).
 Although more theoretical directions are suggested by the complex processes that result in crashes (point patterns on a linear network), the recommendation from this paper is that future academic work is driven primarily by policy need.
 
+# Acknowldgements
+
+The work was funded by the Leeds Insititute for Transport Studies (ITS) Consumer Data Resarch Center (CDRC) at Leeds Institute for Data Analytics (LIDA).
+Thanks to open source software developers who made all this possbile, and to GitHub, where the source code behind this paper is hosted:  https://github.com/Robinlovelace/stats19-gisruk
+
 # References
