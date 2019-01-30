@@ -6,10 +6,10 @@ author:
 - Dr Roger Beecham --- University of Leeds, School of Geography, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
 date: '`r Sys.Date()`'
 output:
-  # github_document
-   pdf_document:
-     fig_caption: yes
-     number_sections: true
+   github_document
+  # pdf_document:
+   #  fig_caption: yes
+    # number_sections: true
 bibliography: references.bib
 ---
 
@@ -351,8 +351,17 @@ map_scale = function(value, min1, max1, min2, max2) {
   return  (min2+(max2-min2)*((value-min1)/(max1-min1)))
 }
 # Load datasets created by generate_semispatial.R
+u = "https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/grid_sf.Rds"
+f = "grid_sf.Rds"
+if(!file.exists(f)) download.file(url = u, destfile = f)
 grid_sf = readRDS("grid_sf.Rds")
+u = "https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/real_sf.Rds"
+f = "real_sf.Rds"
+if(!file.exists(f)) download.file(url = u, destfile = f)
 real_sf = readRDS("real_sf.Rds")
+u = "https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/grid_real_sf.Rds"
+f = "grid_real_sf.Rds"
+if(!file.exists(f)) download.file(url = u, destfile = f)
 grid_real_sf = readRDS("grid_real_sf.Rds")
 
 # Choropleth of risk ratio.
@@ -449,14 +458,14 @@ ggsave("./risk_ratio_maps2.png",plot = out, width=14, height=7)
 ```{r, fig.cap="An approximate geographical layout of England and Wales police force areas following the layout algorithm published in @meulemans_small_2017", echo=FALSE, fig.height=2.5, fig.width=7}
 library(png)
 library(grid)
-img <- readPNG("./semispatial_layout.png")
+img <- readPNG("semispatial_layout.png")
  grid.raster(img)
 ```
 
 ```{r, fig.cap="Risk ratios of KSI rates by force area averaged over 2013-2017 (left and middle), with year-on-year trend in risk ratios and raw KSIs (right)", echo=FALSE, fig.height=3.5, fig.width=7}
 library(png)
 library(grid)
-img <- readPNG("./risk_ratio_maps.png")
+img <- readPNG("risk_ratio_maps.png")
  grid.raster(img)
 ```
 
