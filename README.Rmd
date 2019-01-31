@@ -6,10 +6,10 @@ author:
 - Dr Roger Beecham --- University of Leeds, School of Geography, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
 date: '`r Sys.Date()`'
 output:
-   github_document
-  # pdf_document:
-   #  fig_caption: yes
-    # number_sections: true
+   # github_document
+  pdf_document:
+   fig_caption: yes
+  number_sections: true
 bibliography: references.bib
 ---
 
@@ -203,7 +203,7 @@ p2 = g + geom_bar(aes(accident_severity, fill = impact)) +
 ```
 
 
-```{r, fig.cap="Crash severity by speed limit (top) and crash severity by age band of casualty (bottom)", fig.height=6}
+```{r, fig.cap="Crash severity by speed limit (top) and crash severity by age band of casualty (bottom)", fig.height=6, message=FALSE, echo=FALSE}
 devtools::install_github("thomasp85/patchwork")
 library(patchwork)
 p1 + p2 + plot_layout(ncol = 1, heights = c(4, 5))
@@ -455,11 +455,11 @@ out = grid.arrange(rr_choropleth, rr_grid, rr_grid_cot,
 ggsave("./risk_ratio_maps2.png",plot = out, width=14, height=7)
 ```
 
-```{r geo-layout, fig.cap="An approximate geographical layout of England and Wales police force areas following the layout algorithm published in @meulemans_small_2017", echo=FALSE, fig.height=2.5, fig.width=7}
+```{r geo-layout, fig.cap="An approximate geographical layout of England and Wales police force areas following the layout algorithm published in Muelmans et al. (2017).", echo=FALSE, out.width="100%"}
 knitr::include_graphics("semispatial_layout.png")
 ```
 
-```{r rr, fig.cap="Risk ratios of KSI rates by force area averaged over 2013-2017 (left and middle), with year-on-year trend in risk ratios and raw KSIs (right)", echo=FALSE, fig.height=3.5, fig.width=7}
+```{r rr, fig.cap="Risk ratios of KSI rates by force area, from 2013 to 2017 (left and middle), with year-on-year trend in risk ratios and raw KSIs (right).", echo=FALSE, out.width="100%"}
 knitr::include_graphics("risk_ratio_maps.png")
 ```
 
