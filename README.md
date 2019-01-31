@@ -8,17 +8,16 @@ Data Analytics (LIDA)
 
 # Summary
 
-This paper demonstrates a reproducible approach to downloading,
-formatting and analysing road crash data. Building on the recently
-released **stats19** R package, it is based on a dataset of half a
-million incidents (78,448 car-pedestrian crashes) from the UK STATS19
-database, from 2013 to 2017. The analysis reveals variability in crash
-characteristics depending on social, environmental and regulatory
-factors, and variable police force performance in terms of ‘risk ratios’
-over time. Geographic ‘small multiple’ visualisations show the potential
-of the approach to feed into interactive dashboards and maps to inform
-road safety policy, suggesting multiple directions for reproducible road
-safety
+This paper demonstrates a reproducible approach to download, format and
+analyse road crash data. Using the recently released **stats19** R
+package, it is based on a dataset of half a million incidents (78,448
+car-pedestrian crashes) from the UK STATS19 database, from 2013 to 2017.
+The analysis reveals variability in crash characteristics depending on
+social, environmental and regulatory factors, and variable police force
+performance in terms of ‘risk ratios’ over time. Geographic ‘small
+multiple’ visualisations show the potential of the approach to feed into
+interactive dashboards and maps to inform road safety policy, suggesting
+multiple directions for reproducible road safety
 research.
 
 <!-- Authors are requested to keep to the word limit of 1500 words. The word limit includes the main body of the abstract and everything within (including captions etc.,) and the references. Not included in the word count is the title, author list, date, summary, keywords and author biographies -->
@@ -459,7 +458,7 @@ applications, building on sites such as
 (Lovelace et al. 2017). More theoretical directions are suggested by the
 complex processes underlying crash data (point patterns on a linear
 network). But while so many people die on the roads each year in the UK
-(1676 people in 2017, 3 deaths per 100,000) and worldwide (1,250,000
+(1,793 people in 2017, 3 deaths per 100,000) and worldwide (1,250,000
 people in 2015, 17 deaths per 100,000) and ‘vision zero’ remains a
 Swedish dream (Johansson 2009), we urge people researching STATS19 and
 other road safety datasets to focus on a more urgent question: how to
