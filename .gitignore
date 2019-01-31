@@ -1,3 +1,4 @@
 *.Rds
 *cache*
 .Rproj.user
+*.pdf

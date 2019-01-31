@@ -6,7 +6,7 @@ author:
 - Dr Roger Beecham --- University of Leeds, School of Geography, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
 date: '`r Sys.Date()`'
 output:
-   github_document
+  github_document
   # pdf_document:
   #  fig_caption: yes
   # number_sections: true
@@ -29,10 +29,10 @@ Geographic 'small multiple' visualisations show the potential of the approach to
 # Introduction
 
 This paper is motivated by two high-level policy and academic objectives, which intersect.
-The policy objective is to engender decision making that is informed by high quality evidence and the 'best available data'.
-The academic objective is to ensure that research findings can be reproduced, to ensure scientific falsifiability and to encourage collaboration and cooperation between researchers, rather than competition.
+The policy objective is to provide high quality evidence and the 'best available data' in an 'actionable' form.
+The academic objective is to ensure that research findings can be reproduced, to ensure scientific falsifiability and encourage cooperation between researchers.
 These two objectives intersect because without reproducible methods it is difficult to generate high quality evidence that can be externally verified.
-Conversely, an academic environment that is conducive to collaboration and not competition requires a government that supports open science, "the transparent and accessible knowledge [and methods] shared and developed through collaborative networks" [@vicente-saez_open_2018].
+Conversely, an academic environment that is conducive to collaboration and not competition requires a government that supports 'open science', "the transparent and accessible knowledge [and methods] shared and developed through collaborative networks" [@vicente-saez_open_2018].
 
 This context is relevant to many fields of research that have practical and policy implications. Road safety research is no exception, as its findings often have direct policy implications and can be highly emotive, raising questions about the divide between research and policy [@elvik_handbook_2009]:
 
@@ -45,22 +45,31 @@ This would clearly have advantages for many stakeholders: local and national gov
 advocacy groups such as RoadPeace would be able to engage not only in lobbying, but also science, encouraging arguments from all sides to be based more on objective evidence, rather than emotive anecdote;
 and citizens themselves should benefit, from better road safety policies and the educational opportunities created by open science.
 
-These considerations, and the more mundane observation that dozens of researchers were duplicating effort by cleaning STATS19 data --- the official source of road crash data in Great Britain [@STATS19Data] --- instead of pooling resources to allow the focus to shift onto the research, led to the development of software written in the statistical programming language R [@rcore]: **stats19**, an R package that was released on the Comprehensive R Archive Network (CRAN) in January 2019 [@lovelace_stats19_2019].
+A more mundane motivation was that dozens of researchers are duplicating effort by cleaning road crash data, a process first undertaken by one of the authors three years ago [@lovelace_who_2016] (the code used to clean the data can still be found on [GitHub](https://github.com/Robinlovelace/bikeR)).
+The problem is that the official source of road crash data, called STATS19 [@STATS19Data], is provided in a series of opaque `.csv` files, which provide only integer values.
+This has meant that, instead of pooling data cleaning resources and focussing on the data analysis and research, much time is spent doing data cleaning, duplicating previous work.
+To solve this problem, the **stats19** package was developed, which automatically downloads and formats STATS19 data.
+Written in the popular statistical programming language R [@rcore], **stats19** was published on the Comprehensive R Archive Network (CRAN) in January 2019 [@lovelace_stats19_2019].
 
-Much road safety research has been conducted using Geographic Information Systems (GIS) software [e.g. @kim_using_1996; @peled_pc-oriented_1993; @steenberghen_intra-urban_2004;@razzak_application_2011] and, with the growth of open source GIS products such as QGIS, this is a trend that can encourage open science, as defined above.
+**stats19** can convert the non-geographic data into a geographic representation of the crashes, an important feature given that much recent road safety research has been conducted using Geographic Information Systems (GIS) software [e.g. @kim_using_1996; @peled_pc-oriented_1993; @steenberghen_intra-urban_2004;@razzak_application_2011].
+With the growth of open source GIS products such as QGIS, this is a trend that can encourage open science, as defined above.
 A limitation of dedicated GIS software products from a reproducibility perspective, however, is that they tend to be based on a graphic user interface (GUI), rather than a command-line interface (CLI).
-This has led to many efforts to push geographic research in a more computational direction, under labels such as Geographic Information Science (GIScience), Geographic Data Science, and Geocomputation [@lovelace_geocomputation_2019].
+This has led to many efforts to push geographic research in more reproducible and computational directions, under labels such as Geographic Information Science (GIScience), Geographic Data Science, and Geocomputation [@lovelace_geocomputation_2019].
 
-On a practical level, the work detailed in this paper is indicative of reproducible worklflows because it uses code to define the geographic analysis steps undertaken and a stanardised API for accessing and processing data (**stats19** R package) [@lovelace_stats19_2019], allowing findings to be externally verified. By using RMarkdown to generate this paper, all main analysis steps are shown in code chunks which re-run each time the document is compiled [@xie_r_2018].
-Beyond the high-level aims of evidence-based policy and reproducible research outlined above, this paper has a more specific purpose:
-to show that geographic road safety research *can* be reproducible, with an example that presents new findings on the shifting spatial distribution of car-pedestrian crashes at the national level over the last 5 years.
+<!-- On a practical level, the work detailed in this paper is indicative of reproducible worklflows because it uses code to define the geographic analysis steps undertaken and a stanardised API for accessing and processing data (**stats19** R package) [@lovelace_stats19_2019], allowing findings to be externally verified. -->
+This paper 'practices what it preaches' in terms of reproducibility:
+code chunks in 'RMarkdown' (`.Rmd` files) run each time the document is compiled [@xie_r_2018].
+Thus, beyond the high-level aims of evidence-based policy and reproducible research, this paper has a more specific purpose:
+to demonstrates that geographic road safety research *can* (and probably usually *should*) now be reproducible.
+<!-- with an example that presents new findings on the shifting spatial distribution of car-pedestrian crashes at the national level over the last 5 years. -->
 
 
 # Set-up and data preparation
 
-Full documentation of the `stats19` R package is published in @lovelace_stats19_2019. We include an example of how to access, process and briefly analyse data _within this paper_, to demonstrate the importance of such initiatives for enabling replication of methods, validation of findings and, subsequently, cumulative knowledge building.
+<!-- We include an example of how to access, process and briefly analyse data _within this paper_, to demonstrate the importance of such initiatives for enabling replication of methods, validation of findings and, subsequently, cumulative knowledge building. -->
 
-The R packages used to access, process and analyse the STATS19 data can be installed and loaded as follows:
+As with many computational tasks, the first stage is to install and load the necessary software.
+This is done in the code chunk below which, when run from an R console (CLI), installs and loads as the key packages used:
 
 ```{r}
 pkgs = c(
@@ -80,7 +89,10 @@ purrr::map_lgl(pkgs, require, character.only = TRUE)
 setNames(purrr::map_lgl(pkgs, require, character.only = TRUE), pkgs)
 ```
 
-The following code downloads, formats and combines crash data over the past 5 years:
+The following code downloads, formats and combines crash data over the past 5 years:^[
+Note: the code following code chunks on this page are time-consuming and require interactive use of R.
+To save time, we recommend that readers who wish to reproduce the results start by downloading the `a_cpj` dataset which is available, alongside other datasets from the processing stage, from https://github.com/Robinlovelace/stats19-gisruk/releases
+]
 
 
 ```{r cached1, cache=TRUE, message=FALSE, eval=FALSE}
@@ -103,10 +115,8 @@ The resulting dataset is large, consisting of more than half a million
 (691,641)
 rows (crash points), with `r # ncol(a)` 31 columns [see @lovelace_stats19_2019 for details on the data].
 This is easy to work with in-memory on modern computers, though consumes 1/3 GB of RAM.
-These can be converted into a spatial class, defined by the **sf** package [@pebesma_simple_2018-1].
-A sample of 1000 records is taken and plotted, for demonstration purposes, as follows (see the resulting Figure 1):^[
-Note: to save re-running the previous code chunks, the sample dataset can be downloaded from https://github.com/Robinlovelace/stats19-gisruk/releases
-]
+These can be converted into a spatial class, defined by the **sf** package [@pebesma_simple_2018].
+A sample of 1000 records is taken and plotted, for demonstration purposes, as follows (see the resulting Figure 1):
 
 ```{r, eval=FALSE}
 a_sf = format_sf(a)
@@ -153,7 +163,7 @@ a_cp = a_sf %>%
 nrow(a_cp) / nrow(a)
 ```
 
-Before proceeding, it is worth joining-on the vehicle and crash tables onto the crash data:
+Before proceeding, we join the vehicle and crash tables onto the crash data as follows, to create the main input dataset used in this paper:
 <!-- , keeping only records in which casualty *and* vehicle data is present. -->
 
 ```{r, eval=FALSE}
@@ -177,7 +187,14 @@ a_cpj = readRDS("a_cpj.Rds")
 ```
 
 The resulting dataset, `a_cpj`, contains 78,454 rows: 11% of the crashes in the original dataset represent a car-pedestrian collision involving a single vehicle and a single casualty (the pedestrian).
-This dataset, which contains 68 columns, will be used for the remainder of this analysis.
+This dataset, which contains 68 columns, will be used for the remainder of this analysis, and can be downloaded from the paper's GitHub repo and loaded as follows:
+
+```{r, eval=FALSE}
+u = "https://github.com/Robinlovelace/stats19-gisruk/releases/download/0.0.1/a_cpj.Rds"
+download.file(url = u, destfile = "a_cpj.Rds")
+a_cpj = readRDS("a_cpj.Rds")
+```
+
 The final code chunk in this section generates plots that expose insight into the nature of car-pedestrian crashes.
 As illustrated in Figures 2 and 3, the results match prior expectations: 
 elderly people (in the 66-75 and 75+ age bands) and fast roads (40 to 70 miles per hour) tend to result in more serious and fatal injuries.
@@ -193,17 +210,24 @@ a_cpj$age_band_of_casualty[a_cpj$age_band_of_casualty == "6 - 10"] = "06 - 10"
 g = ggplot(a_cpj)
 ```
 
-```{r}
-p1 = g + geom_bar(aes(accident_severity, fill = urban_or_rural_area)) +
+```{r, eval=FALSE}
+g + geom_bar(aes(accident_severity, fill = urban_or_rural_area)) +
  facet_wrap(vars(speed_limit), scales = "free_y") +
   labs(fill = "Location")
-p2 = g + geom_bar(aes(accident_severity, fill = impact)) +
+
+g + geom_bar(aes(accident_severity, fill = impact)) +
   facet_wrap(vars(age_band_of_casualty), scales = "free_y") +
   theme(axis.text.x = element_text(angle = 45))
 ```
 
 
 ```{r, fig.cap="Crash severity by speed limit (top) and crash severity by age band of casualty (bottom)", fig.height=6, message=FALSE, echo=FALSE}
+p1 = g + geom_bar(aes(accident_severity, fill = urban_or_rural_area)) +
+ facet_wrap(vars(speed_limit), scales = "free_y") +
+  labs(fill = "Location")
+p2 = g + geom_bar(aes(accident_severity, fill = impact)) +
+  facet_wrap(vars(age_band_of_casualty), scales = "free_y") +
+  theme(axis.text.x = element_text(angle = 45))
 devtools::install_github("thomasp85/patchwork")
 library(patchwork)
 p1 + p2 + plot_layout(ncol = 1, heights = c(4, 5))
@@ -506,25 +530,26 @@ knitr::include_graphics("risk_ratio_maps.png")
 
 # Discussion
 
-This paper has provided a taster of what is possible with open road crash data, automatically downloaded and formatted using the **stats19** package.
-It reveals interesting regional differences in the numbers, proportions and trends of one particular type of road crash: car-pedestrian collisions.
-Although roads are complex systems, and further research should seek to identify suitable denominators of risk (e.g. walking rates), we can draw some conclusions.
-The recent narional increase in serious and fatal casualties is concerning, especially given the government's commitment to contribute to the European Union's target of halving road traffic deaths by 2050.^[
+This paper has provided a taster of what is possible with open road crash data, using packages such as **stats19**, revealing regional differences in the numbers, proportions and trends of one particular type of road crash: car-pedestrian collisions.
+However, much more is possible with the approach. 
+A key priority in road safety research is to identify suitable denominators of risk, something that geographical methods are well-suited to answering.
+With new data sources, could denominators be produced at high levels of geographic resolution than the coarse Local Authority levels used in a previous studies [@lovelace_who_2016]?
+More specifically, why have there been increases in serious and fatal casualties in some areas, as shown in the previous section?
+This finding is concerning, especially in the context of the government's commitment to contribute to the European Union's target of halving road traffic deaths by 2050,^[
 https://fleetworld.co.uk/uk-falling-behind-on-road-safety-targets/
-]
-The results reflect the overall findings that crash rates, and deaths in particular, have increased in recent years.^[
+] and recent concerns from road safety advocates about recent trends in road traffic deaths.^[
 http://www.brake.org.uk/facts-resources/1653-uk-road-casualties
 ]
-But beyond high-level aggregate analysis, the paper shows how road crash data can be disaggregated in many ways, including by casualty type (e.g. age, gender), time and location.
-Although many interesting results have been generated, the truth is that this paper only really scratches the surface of what is possible with the 68 columns and hundreds of thousands of roads of the joined STATS19 data.
 
-This suggests many future areas of research.
-From a policy perspective, can automated summary graphics provide insight into performance and early warnings of increases in certain types of crashes?
-Can recent findings about the effectiveness of different interventions, particuarly around 20 mph zones and limits [@grundy_effect_2009; @aldred_cycling_2018] be replicated using open data and publicly available code?
+The richness of road crash data means that it can be disaggregated in many ways, beyond the results presented in this paper: there are 50+ columns and hundreds of thousands of roads represented in the joined STATS19 data, suggesting future research questions, including:
+- What kinds of places have seen improvements in road safety, and how can we learn from these?
+- Can automated summary graphics provide insight into performance and early warnings of increases in certain types of crashes?
+- And can recent findings about the effectiveness of different interventions, particuarly around 20 mph zones and limits [@grundy_effect_2009; @aldred_cycling_2018] be replicated using open data and publicly available code?
 
-From a GIS perspective, the data presented in this paper are undoubtedly of great interest in terms of their size (there are several million points in the open STATS19 data, going back to 1979), richness (with 50+ variables across 3 tables which can be judiciously joined) and spatial resolution (around 10m, although this has not been verified).
-This raises further questions about interactive data visualisation, for example using the `geoplumber` package, which builds on `plumber` [@plumber], and the possibility for web applications building on sites such as [www.crashmap.co.uk](https://www.crashmap.co.uk/).
-Although more theoretical directions are suggested by the complex processes that result in crashes (point patterns on a linear network), the recommendation from this paper is that future academic work is driven primarily by policy need.
+From a GIS perspective, the data presented in this paper are of interest in terms of their size (there are several million points in the open STATS19 data, going back to 1979), richness and spatial resolution (in the order of 10m, but how accurate are the coordinates?).
+One area where geographic research can help is in data visualisation, with new packages such as **geoplumber** opening the possibility of open source web applications, building on sites such as [www.crashmap.co.uk](https://www.crashmap.co.uk/) and [www.pct.bike](http://www.pct.bike/) to inform policy and public debate [@lovelace_propensity_2017].
+More theoretical directions are suggested by the complex processes underlying crash data (point patterns on a linear network).
+However, the main recommendation from this paper is that future geographic research into road crash data is driven primarily by policy.
 
 # Acknowldgements
 
