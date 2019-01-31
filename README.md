@@ -463,12 +463,12 @@ applications, building on sites such as
 [www.pct.bike](http://www.pct.bike/) to inform policy and public debate
 (Lovelace et al. 2017). More theoretical directions are suggested by the
 complex processes underlying crash data (point patterns on a linear
-network). However, while hundreds people die on the roads each year in
-the UK (1676 people in 2017, 3 deaths per 100,000) and worldwide
-(1,250,000 people in 2015, 17 deaths per 100,000) and ‘vision zero’
-remains a Swedish dream (Johansson 2009), we urge people researching
-STATS19 and other road safety datasets to focus on a more urgent
-question: how to stop this carnage?
+network). But while so many people die on the roads each year in the UK
+(1676 people in 2017, 3 deaths per 100,000) and worldwide (1,250,000
+people in 2015, 17 deaths per 100,000) and ‘vision zero’ remains a
+Swedish dream (Johansson 2009), we urge people researching STATS19 and
+other road safety datasets to focus on a more urgent question: how to
+stop this carnage?
 
 # Acknowldgements
 

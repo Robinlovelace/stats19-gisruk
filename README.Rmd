@@ -554,7 +554,7 @@ The richness of road crash data means that it can be disaggregated in many ways,
 From a GIS perspective, the data presented in this paper are of interest in terms of their size (there are several million points in the open STATS19 data, going back to 1979), richness and spatial resolution (in the order of 10m, but how accurate are the coordinates?).
 One area where geographic research can help is in data visualisation, with new packages such as **geoplumber** opening the possibility of open source web applications, building on sites such as [www.crashmap.co.uk](https://www.crashmap.co.uk/) and [www.pct.bike](http://www.pct.bike/) to inform policy and public debate [@lovelace_propensity_2017].
 More theoretical directions are suggested by the complex processes underlying crash data (point patterns on a linear network).
-However, while hundreds people die on the roads each year in the UK (1676 people in 2017, 3 deaths per 100,000) and worldwide (1,250,000  people in 2015, 17 deaths per 100,000) and 'vision zero' remains a Swedish dream [@johansson_vision_2009], we urge people researching STATS19 and other road safety datasets to focus on a more urgent question: how to stop this carnage?
+But while so many people die on the roads each year in the UK (1676 people in 2017, 3 deaths per 100,000) and worldwide (1,250,000  people in 2015, 17 deaths per 100,000) and 'vision zero' remains a Swedish dream [@johansson_vision_2009], we urge people researching STATS19 and other road safety datasets to focus on a more urgent question: how to stop this carnage?
 
 
 ```{r, include=FALSE, eval=FALSE}
