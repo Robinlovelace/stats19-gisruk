@@ -550,6 +550,7 @@ http://www.brake.org.uk/facts-resources/1653-uk-road-casualties
 ]
 
 The richness of road crash data means that it can be disaggregated in many ways, beyond the results presented in this paper: there are 50+ columns and hundreds of thousands of roads represented in the joined STATS19 data, suggesting future research questions, including:
+
 - What kinds of places have seen improvements in road safety, and how can we learn from these?
 - Can automated summary graphics provide insight into performance and early warnings of increases in certain types of crashes?
 - And can recent findings about the effectiveness of different interventions, particuarly around 20 mph zones and limits [@grundy_effect_2009; @aldred_cycling_2018] be replicated using open data and publicly available code?

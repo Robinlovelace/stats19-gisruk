@@ -437,14 +437,16 @@ deaths.\[3\]
 The richness of road crash data means that it can be disaggregated in
 many ways, beyond the results presented in this paper: there are 50+
 columns and hundreds of thousands of roads represented in the joined
-STATS19 data, suggesting future research questions, including: - What
-kinds of places have seen improvements in road safety, and how can we
-learn from these? - Can automated summary graphics provide insight into
-performance and early warnings of increases in certain types of crashes?
-- And can recent findings about the effectiveness of different
-interventions, particuarly around 20 mph zones and limits (Grundy et al.
-2009; Aldred et al. 2018) be replicated using open data and publicly
-available code?
+STATS19 data, suggesting future research questions, including:
+
+  - What kinds of places have seen improvements in road safety, and how
+    can we learn from these?
+  - Can automated summary graphics provide insight into performance and
+    early warnings of increases in certain types of crashes?
+  - And can recent findings about the effectiveness of different
+    interventions, particuarly around 20 mph zones and limits (Grundy et
+    al. 2009; Aldred et al. 2018) be replicated using open data and
+    publicly available code?
 
 From a GIS perspective, the data presented in this paper are of interest
 in terms of their size (there are several million points in the open
