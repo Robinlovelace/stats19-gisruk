@@ -6,10 +6,10 @@ author:
 - Dr Roger Beecham --- University of Leeds, School of Geography, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
 date: '`r Sys.Date()`'
 output:
-   # github_document
-  pdf_document:
-   fig_caption: yes
-  number_sections: true
+   github_document
+  # pdf_document:
+  #  fig_caption: yes
+  # number_sections: true
 bibliography: references.bib
 ---
 
@@ -18,9 +18,9 @@ bibliography: references.bib
 # Summary {-}
 
 This paper demonstrates a reproducible analysis workflow for downloading, formatting and analysing road crash data.
-Building on the recently published **stats19** R package, the paper contains code that downloads 691,641 crash incidents, which are filtered-down to 78,448 car-pedestrian crashes.
-The dataset reveals variability in crash characteristics depending on the age of the person hurt, speed limits and location (urban-rural in the first instance).
-More importantly, the beginnings of evaluation metrics are shown using high-level geographic aggregation, raising many further questions and directions for future research using open road crash data.
+Building on the recently released **stats19** R package, the paper contains code that downloads, processes and reformats over half a million incidents (78,448 car-pedestrian crashes) from 2013 to 2017.
+The dataset reveals variability in crash characteristics depending on social, environmental and regulatory factors, and variable performance in terms of 'risk ratios' over space and time.
+Geographic 'small multiple' visualisations show the potential of the approach to feed into interactive dashboards and maps to inform road safety policy, suggesting multiple directions for reproducible road safety research.
 
 <!-- Authors are requested to keep to the word limit of 1500 words. The word limit includes the main body of the abstract and everything within (including captions etc.,) and the references. Not included in the word count is the title, author list, date, summary, keywords and author biographies -->
 
