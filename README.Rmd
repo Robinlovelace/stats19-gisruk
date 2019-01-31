@@ -74,7 +74,7 @@ to demonstrates that geographic road safety research *can* (and probably usually
 <!-- We include an example of how to access, process and briefly analyse data _within this paper_, to demonstrate the importance of such initiatives for enabling replication of methods, validation of findings and, subsequently, cumulative knowledge building. -->
 
 As with many computational tasks, the first stage is to install and load the necessary software.
-This is done in the code chunk below which, when run from an R console (CLI), installs and loads as the key packages used:
+This is done in the code chunk below which, when run from an R console (CLI), installs and loads the key packages used:
 
 ```{r}
 pkgs = c(
@@ -95,8 +95,10 @@ setNames(purrr::map_lgl(pkgs, require, character.only = TRUE), pkgs)
 ```
 
 The following code downloads, formats and combines crash data over the past 5 years:^[
-Note: the code following code chunks on this page are time-consuming and require interactive use of R.
-To save time, we recommend that readers who wish to reproduce the results start by downloading the `a_cpj` dataset which is available, alongside other datasets from the processing stage, from https://github.com/Robinlovelace/stats19-gisruk/releases
+Note: the following code chunks are time-consuming and require interactive use of R to run.
+To save time, we recommend that people who want to reproduce the results start by downloading the clean `a_cpj` dataset.
+This can be found, alongside other datasets generated for this paper, at [github.com/Robinlovelace/stats19-gisruk](https://github.com/Robinlovelace/stats19-gisruk/releases).
+Code to download this dataset is provided below, in the code chunk that contails the function `download.file()` to download the pre-processed dataset.
 ]
 
 
@@ -126,9 +128,10 @@ A sample of 1000 records is taken and plotted, for demonstration purposes, as fo
 ```{r, eval=FALSE}
 a_sf = format_sf(a)
 a_sample = a_sf %>% sample_n(1000)
+plot(a_sample)
 ```
 
-```{r uk-plot1, cache=TRUE, fig.cap="Columns of 'a_sample' variable plotted separately on a UK map.", warning=FALSE, fig.height=4}
+```{r uk-plot1, cache=TRUE, fig.cap="Columns of 'a_sample' variable plotted separately on a UK map.", warning=FALSE, fig.height=4, echo=FALSE}
 a_sample = readRDS("a_sample.Rds")
 plot(a_sample)
 ```

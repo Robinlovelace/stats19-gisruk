@@ -110,8 +110,7 @@ research *can* (and probably usually *should*) now be reproducible.
 
 As with many computational tasks, the first stage is to install and load
 the necessary software. This is done in the code chunk below which, when
-run from an R console (CLI), installs and loads as the key packages
-used:
+run from an R console (CLI), installs and loads the key packages used:
 
 ``` r
 pkgs = c(
@@ -149,10 +148,6 @@ demonstration purposes, as follows (see the resulting Figure 1):
 ``` r
 a_sf = format_sf(a)
 a_sample = a_sf %>% sample_n(1000)
-```
-
-``` r
-a_sample = readRDS("a_sample.Rds")
 plot(a_sample)
 ```
 
@@ -650,12 +645,15 @@ Definitive Guide*. 1 edition. Boca Raton: Chapman and Hall/CRC.
 
 </div>
 
-1.   Note: the code following code chunks on this page are
-    time-consuming and require interactive use of R. To save time, we
-    recommend that readers who wish to reproduce the results start by
-    downloading the `a_cpj` dataset which is available, alongside other
-    datasets from the processing stage, from
-    <https://github.com/Robinlovelace/stats19-gisruk/releases>
+1.   Note: the following code chunks are time-consuming and require
+    interactive use of R to run. To save time, we recommend that people
+    who want to reproduce the results start by downloading the clean
+    `a_cpj` dataset. This can be found, alongside other datasets
+    generated for this paper, at
+    [github.com/Robinlovelace/stats19-gisruk](https://github.com/Robinlovelace/stats19-gisruk/releases).
+    Code to download this dataset is provided below, in the code chunk
+    that contails the function `download.file()` to download the
+    pre-processed dataset.
 
 2.  
     <https://fleetworld.co.uk/uk-falling-behind-on-road-safety-targets/>
