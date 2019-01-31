@@ -8,17 +8,17 @@ Data Analytics (LIDA)
 
 # Summary
 
-This paper demonstrates a reproducible analysis workflow for
-downloading, formatting and analysing road crash data. Building on the
-recently released **stats19** R package, the paper contains code that
-downloads, processes and reformats over half a million incidents (78,448
-car-pedestrian crashes) from 2013 to 2017. The dataset reveals
-variability in crash characteristics depending on social, environmental
-and regulatory factors, and variable performance in terms of ‘risk
-ratios’ over space and time. Geographic ‘small multiple’ visualisations
-show the potential of the approach to feed into interactive dashboards
-and maps to inform road safety policy, suggesting multiple directions
-for reproducible road safety
+This paper demonstrates a reproducible approach to downloading,
+formatting and analysing road crash data. Building on the recently
+released **stats19** R package, it is based on a dataset of half a
+million incidents (78,448 car-pedestrian crashes) from the UK STATS19
+database, from 2013 to 2017. The analysis reveals variability in crash
+characteristics depending on social, environmental and regulatory
+factors, and variable police force performance in terms of ‘risk ratios’
+over time. Geographic ‘small multiple’ visualisations show the potential
+of the approach to feed into interactive dashboards and maps to inform
+road safety policy, suggesting multiple directions for reproducible road
+safety
 research.
 
 <!-- Authors are requested to keep to the word limit of 1500 words. The word limit includes the main body of the abstract and everything within (including captions etc.,) and the references. Not included in the word count is the title, author list, date, summary, keywords and author biographies -->
@@ -227,7 +227,7 @@ g + geom_bar(aes(accident_severity, fill = impact)) +
 ```
 
 ![Crash severity by speed limit (top) and crash severity by age band of
-casualty (bottom)](README_files/figure-gfm/unnamed-chunk-17-1.png)
+casualty (bottom)](README_files/figure-gfm/unnamed-chunk-18-1.png)
 
 # Geographic analysis and results
 
@@ -245,7 +245,7 @@ agg_slight = aggregate(a_cpj["accident_severity"], police_boundaries,
 
 ![Overview of crashes by police force area, showing relative numbers of
 slight, serious and fatal
-injuries.](README_files/figure-gfm/unnamed-chunk-20-1.png)
+injuries.](README_files/figure-gfm/unnamed-chunk-21-1.png)
 
 Repeating this process for each crash severity type results in the plot
 presented in Figure 3. Because a log scale is used between the different
@@ -287,7 +287,7 @@ the past 5 years, after decades of improvement. What the data does not
 show, however, is the geographic breakdown of these trends.
 
 ![Variability of crash rates over
-time.](README_files/figure-gfm/unnamed-chunk-22-1.png)
+time.](README_files/figure-gfm/unnamed-chunk-23-1.png)
 
 A geographic join can assign each crash to a police authority as
 follows:
@@ -314,7 +314,7 @@ arranged small multiples (Tufte 1983).
 
 ![Average number of pedestrian casualties by severity and police force
 in a selection of areas (see Table
-1)](README_files/figure-gfm/unnamed-chunk-24-1.png)
+1)](README_files/figure-gfm/unnamed-chunk-25-1.png)
 
 We have identified some challenges associated with disaggregate analysis
 of casualty data: the substantial between-force differences in absolute
@@ -463,9 +463,12 @@ applications, building on sites such as
 [www.pct.bike](http://www.pct.bike/) to inform policy and public debate
 (Lovelace et al. 2017). More theoretical directions are suggested by the
 complex processes underlying crash data (point patterns on a linear
-network). However, the main recommendation from this paper is that
-future geographic research into road crash data is driven primarily by
-policy.
+network). However, while hundreds people die on the roads each year in
+the UK (1676 people in 2017, 3 deaths per 100,000) and worldwide
+(1,250,000 people in 2015, 17 deaths per 100,000) and ‘vision zero’
+remains a Swedish dream (Johansson 2009), we urge people researching
+STATS19 and other road safety datasets to focus on a more urgent
+question: how to stop this carnage?
 
 # Acknowldgements
 
@@ -520,6 +523,16 @@ Armstrong, and Paul Wilkinson. 2009. “Effect of 20 Mph Traffic Speed
 Zones on Road Injuries in London, 1986-2006: Controlled Interrupted Time
 Series Analysis.” *BMJ* 339 (December): b4469.
 <https://doi.org/10.1136/bmj.b4469>.
+
+</div>
+
+<div id="ref-johansson_vision_2009">
+
+Johansson, Roger. 2009. “Vision Zero a Policy for Traffic Safety.”
+*Safety Science*, Occupational Accidents and Safety: The Challenge of
+Globalization / Resolving multiple criteria in decision-making involving
+risk of accidental loss, 47 (6): 826–31.
+<https://doi.org/10.1016/j.ssci.2008.10.023>.
 
 </div>
 
