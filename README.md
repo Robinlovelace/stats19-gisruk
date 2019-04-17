@@ -4,7 +4,7 @@ spatial and temporal distribution of car-pedestrian crashes
 Dr Robin Lovelace — University of Leeds, Consumer Data Research Centre
 (CDRC) and Institute for Transport Studies (ITS) and Leeds Institute for
 Data Analytics (LIDA)
-2019-01-31
+2019-02-01
 
 # Summary
 

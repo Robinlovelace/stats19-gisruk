@@ -1,9 +1,9 @@
 ---
 title: "Reproducible road safety research: an exploration of the shifting spatial and temporal distribution of car-pedestrian crashes"
 author:
-- Dr Robin Lovelace --- University of Leeds, Consumer Data Research Centre (CDRC) and Institute for Transport Studies (ITS) and Leeds Institute for Data Analytics (LIDA)
-- Dr Layik Hama --- University of Leeds, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
-- Dr Roger Beecham --- University of Leeds, School of Geography, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
+  - Dr Robin Lovelace --- University of Leeds, Consumer Data Research Centre (CDRC) and Institute for Transport Studies (ITS) and Leeds Institute for Data Analytics (LIDA)
+  - Dr Layik Hama --- University of Leeds, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
+  - Dr Roger Beecham --- University of Leeds, School of Geography, Consumer Data Research Centre (CDRC) and Leeds Institute for Data Analytics (LIDA)
 date: '`r Sys.Date()`'
 output:
   github_document
@@ -16,9 +16,6 @@ bibliography: references.bib
 ```{r, include=FALSE, eval=FALSE}
 file.rename("README.pdf", "stats19-gisruk.pdf")
 ```
-
-
-
 
 # Summary {-}
 

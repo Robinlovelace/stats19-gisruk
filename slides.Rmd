@@ -1,0 +1,62 @@
+---
+title: "Reproducible road safety research"
+subtitle: "⚔<br/>with xaringan"
+author: "Roger Beecham and Layik Hama"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+# Plan (to be removed)
+
+- Talk from ~10:30, 15 minutes and 5 minutes for questions
+
+
+- History of crash research
+- Geographic research
+- Lack of reproducibility, time wasted cleaning data
+- Data is inaccessible to public
+- What stats19 can do for you (live demo?)
+- Analyst use case
+- Dashboard potential
+- Interactive map interface (Layik)
+
+---
+
+# History of crash research
+
+
+
+
+---
+
+# Geographic analyses of crashes
+
+
+---
+
+# (Lack of) reproducibility in road safety research
+
+- Takes days to figure out STATS19 .csv files 
+- Huge amount of time spent by researchers on data cleaning
+- This is an error prone process
+
+---
+
+# (In)accessibility
+
+![](README_files/crashmaps.png)
+
+---
+
+- What stats19 can do for you (live demo?)
+- Analyst use case
+- Dashboard potential
+- Interactive map interface (Layik)
+
