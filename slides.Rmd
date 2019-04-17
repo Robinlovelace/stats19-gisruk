@@ -1,7 +1,7 @@
 ---
 title: "Reproducible road safety research"
-subtitle: "⚔<br/>with xaringan"
-author: "Roger Beecham and Layik Hama"
+subtitle: "🚶🚗🚑<br/>an exploration of the shifting spatial and temporal distribution of car-pedestrian crashes"
+author: "Roger Beecham, Layik Hama, Robin Lovelace"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -12,12 +12,9 @@ output:
       countIncrementalSlides: false
 ---
 
-
-# Plan (to be removed)
+# Overview (to be commented out)
 
 - Talk from ~10:30, 15 minutes and 5 minutes for questions
-
-
 - History of crash research
 - Geographic research
 - Lack of reproducibility, time wasted cleaning data
@@ -26,6 +23,27 @@ output:
 - Analyst use case
 - Dashboard potential
 - Interactive map interface (Layik)
+
+---
+
+
+# Introduction
+
+- Roads kill more young, healthy people than any other cause of death
+
+--
+
+![](https://www.who.int/images/default-source/infographics/top-10-global-causes-of-deaths-2016.jpg?sfvrsn=56e8d56c_0)
+
+Source: [World Health Organization, 2018](https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death)
+
+???
+
+Kills more people than war.
+
+Inherently geographical.
+
+Why isn't it a major branch of GIS research? Lack of data!
 
 ---
 
